@@ -135,46 +135,71 @@ int deletar()
 }
 
 int main()
-{
+	{
 	int opcao=0;
 	int laco=1;
-	
-	for(laco=1;laco=1;) //usado para fazer repetiçoes
-	{
-
-		system("cls");
-		
-		setlocale(LC_ALL, "portuguese"); //isso mostra que pode ter acento pq a locale.h permite o uso regional o LC_ALL mostra de qual região pegar os acentos de texto
+	char senhadigitada[]="a";
+	int comparacao;
 	
 		printf("### Cartório da EBAC ###\n\n");
-		printf("Escolha a opção desejada do menu: \n\n");
-		printf("\t1 - Registrar nomes \n");
-		printf("\t2 - Consultar nomes \n");
-		printf("\t3 - Deletar nomes \n\n");// \t da o espaço de um TAB
-		printf("Opção: ");
-	
-		scanf("%d", &opcao); //usa o %d para verificar com o usuario qual opção selecionou
-	
-		system("cls"); //limpa a tela depois do uso
+		printf("Login de Adiministrador! \n\nDigite a sua senha: ");
+		scanf("%s",senhadigitada);
 		
-		switch(opcao) // switch case é parecido com o if e mais limpo
+		comparacao = strcmp(senhadigitada, "admin");
+		
+		if (comparacao == 0)
 		{
-			case 1:
-			registro();		//chama as funções
-			break;
+			system("cls");//limpa a tela
 			
-			case 2:
-			consulta();	
-			break;
-					
-			case 3:
-			deletar();
-			break;
-					
-			default:
-			printf("Operação inexistente\n");
-			system("pause");
-			break;
+		
+	
+			for(laco=1;laco=1;) //usado para fazer repetiçoes
+			{
+	
+			system("cls");
+			
+			setlocale(LC_ALL, "portuguese"); //isso mostra que pode ter acento pq a locale.h permite o uso regional o LC_ALL mostra de qual região pegar os acentos de texto
+		
+			printf("### Cartório da EBAC ###\n\n");
+			printf("Escolha a opção desejada do menu: \n\n");
+			printf("\t1 - Registrar nomes \n");
+			printf("\t2 - Consultar nomes \n");
+			printf("\t3 - Deletar nomes \n");// \t da o espaço de um TAB
+			printf("\t4 - Sair do Sistema \n\n");
+			printf("Opção: ");
+	
+			scanf("%d", &opcao); //usa o %d para verificar com o usuario qual opção selecionou
+	
+			system("cls"); //limpa a tela depois do uso
+		
+			switch(opcao) // switch case é parecido com o if e mais limpo
+			{
+				case 1:
+				registro();		//chama as funções
+				break;
+				
+				case 2:
+				consulta();	
+				break;
+						
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("Obrigado por utilizar o sistem! \n");
+				return 0;
+				break;
+						
+				default:
+				printf("Operação inexistente\n");
+				system("pause");
+				break;
+			}
 		}
+		
+		
 	}
-}
+	else
+			printf("Senha incorreta!!!");
+}	
